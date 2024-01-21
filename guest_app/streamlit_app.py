@@ -20,6 +20,7 @@ st.set_page_config(
 )
 st.markdown("##")
 
+
 UI()
 st.markdown("##")
 
@@ -207,8 +208,9 @@ st.dataframe(df[show_column], use_container_width=True)
 # print (df_group_)
 
 
-with st.expander("Cross Tab"):
-	tab = pd.crosstab([df.method], df.amount, margins=True)
-	df_group = df.groupby(["method","currency"])["amount"].agg("sum").reset_index(name="total_amount")
-	st.dataframe(df_group,use_container_width=True)
+# with st.expander("Cross Tab"):
+	# tab = pd.crosstab([df.method], df.amount, margins=True)
+st.subheader('Summary', divider='rainbow')
+df_group = df.groupby(["method","currency"])["amount"].agg("sum").reset_index(name="total_amount")
+st.dataframe(df_group,use_container_width=True)
 

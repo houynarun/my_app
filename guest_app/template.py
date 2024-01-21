@@ -14,6 +14,12 @@ div[data-testid="stExpander"] div[role="button"] p
 {
     font-size: 1.1rem;
 }
-
+.stApp [data-testid="stToolbar"],
+header[data-testid="stHeader"]{
+    display:none;
+}
+.block-container {
+    padding-top: 0;
+}
 </style>
  """, unsafe_allow_html=True)
